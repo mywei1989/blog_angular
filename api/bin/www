@@ -13,14 +13,13 @@ var http = require('http');
  */
 
 var port = normalizePort(process.env.PORT || '3001');
-
-//app.listen(3001);
+app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app.callback()).listen(port);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
