@@ -4,20 +4,19 @@ var async = require('async');
 var Post = require('../models/post.js');
 
 module.exports = function(app){
-
   app.get('/getAllTag',function(req,res,next){
-    console.log(1);
     if(req.sessionID){
       var post = new Post({});
       post.getAllTag(function(err,docs){
-        if(!(err)&&docs){
-          console.log(docs);
+        if(!(err)&&docs!=null){
           res.json(docs);
+          res.end();
+        }else{
+          res.json({status:404,message:''});
           res.end();
         }
       });
     }else{
-      console.log(2);
       res.end();
     }
   });

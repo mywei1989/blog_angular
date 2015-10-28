@@ -6,6 +6,23 @@ var List = require('../models/list.js');
 
 
 module.exports = function(app){
+  app.get('/getArchive',function(req,res,next){
+    if(req.sessionID){
+      var list = new List({
+        pageIndex:1,
+        pageSize:settings.pageSize,
+        queryObj:{}
+      });
+      list.getArchive(function(err,archiveArray){
+        if(!(err)&&archiveArray){
+          res.json(archiveArray);
+          res.end();
+        }
+      });
+    }else{
+      res.end();
+    }
+  });
   /*app.get('/',function(req,res,next){
     if(req.sessionID){
       var list = new List({
