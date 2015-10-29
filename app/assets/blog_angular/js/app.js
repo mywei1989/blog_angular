@@ -3,6 +3,7 @@
 var blogApp = angular.module('blogApp', [
   /*'ngRoute',
   'blogAppControllers'*/
+  'blogAppControllers',
   'ui.router'
 ]);
 
@@ -16,21 +17,15 @@ blogApp
             views:{
               "list":{
                 templateUrl:"../../partials/list.html",
-                controller:function($scope){
-
-                }
+                controller:"listCtrl"
               },
               "tags":{
                 templateUrl:"../../partials/tags.html",
-                controller:function($scope){
-
-                }
+                controller:"tagsCtrl"
               },
               "archives":{
                 templateUrl:"../../partials/archives.html",
-                controller:function($scope){
-
-                }
+                controller:"archivesCtrl"
               }
             }
         });
