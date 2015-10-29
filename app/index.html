@@ -1,19 +1,94 @@
 <!doctype html>
-<html lang="zh-cn" ng-app="phonecatApp">
+<html lang="zh-cn" ng-app="blogApp">
 <head>
   <meta charset="utf-8">
   <title>null-blog|</title>
   <link rel="stylesheet" href="assets/global/plugins/normalize.css/normalize.css">
   <link rel="stylesheet" href="assets/global/plugins/highlight.js/styles/sunburst.css">
-  <link rel="stylesheet" href="assets/blog/css/style.css" />
+  <link rel="stylesheet" href="assets/blog_angular/css/style.css" />
   <script src="assets/global/plugins/angularjs/1.4.7/angular.js"></script>
+  <!--<script src="assets/global/plugins/angularjs/1.4.7/angular-route.js"></script>-->
+  <script src="assets/global/plugins/angularjs/ui-router/angular-ui-router.js"></script>
   <script src="assets/blog_angular/js/app.js"></script>
   <script src="assets/blog_angular/js/controllers.js"></script>
   <script src="assets/blog_angular/js/services.js"></script>
 </head>
 <body>
+  <div class="container">
+    <div class="columns page-header">
+      <h1>null的博客</h1>
+    </div>
+    <div class="columns">
+      <div class="navigation clearfix">
+        <nav class="menus-main left">
+          <a href="/" class="favicon">
+            <img alt="null在吹牛逼" src="assets/blog_angular/images/favicon.png"/>
+          </a>
+          <a href="/about">关于</a>
+          <a href="/profile">简历</a>
+          <a href="/links">链接</a>
+          <a href="/booklist">书单</a>
+          <a href="/tweets">碎语</a>
+          <a href="/">所有日志</a>
+        </nav>
+        <nav class="menus-right right">
+          <a target="_blank" href="http://git.oschina.net/mywei1989" class="favicon">
+            <img alt="myGitosc" src="assets/blog_angular/images/gitosc.png"/>
+          </a>
+          <a target="_blank" href="https://github.com/mywei1989" class="favicon">
+            <img alt="myGithub" src="assets/blog_angular/images/github.png"/>
+          </a>
+        </nav>
+      </div>
+    </div>
+    <div class="columns">
+      <!-- <div ui-view="list"></div> -->
 
-  <div ng-view></div>
+      <div ui-view="list" class="block-body column three-fourths">
+      </div>
+
+      <div class="block-sidebar column one-fourth">
+          <div class="widget text-content">
+            <p>浮世梦中梦，布衣材不材，弹铗狂歌莫浪猜。埋，愚贤何用哉？青山在，月明归去来。</p>
+            <ul>
+              <li>
+                <a href="http://www.nullcn.com">独立博客</a>
+                作者
+              </li>
+              <li>
+                前(quan)端(zhan)工程师
+              </li>
+              <li>
+                失业中
+              </li>
+            </ul>
+          </div>
+          <div ui-view="tags" class="widget tags">
+
+          </div>
+          <div ui-view="archives" class="widget archives">
+
+          </div>
+          <div class="widget text-content">
+            <p>
+              <a target="_blank" href="https://nodejs.org" class="favicon">
+                <img alt="myGitosc" src="assets/blog_angular/images/nodejs.png"/>
+              </a>
+              <a target="_blank" href="https://www.mongodb.com" class="favicon">
+                <img alt="myGitosc" src="assets/blog_angular/images/mongodb.ico"/>
+              </a>
+              <a target="_blank" href="https://github.com/mywei1989/blog" class="favicon">
+                <img alt="myGithub" src="assets/blog_angular/images/github.png"/>
+              </a>
+              <br />
+              博客内容如无特殊说明均为原创，并使用
+              <a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0</a>
+              授权发布。
+            </p>
+          </div>
+        </div>
+    </div>
+  </div>
 
 </body>
 </html>
