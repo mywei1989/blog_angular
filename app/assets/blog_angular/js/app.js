@@ -3,28 +3,28 @@
 var blogApp = angular.module('blogApp', [
   /*'ngRoute',
   'blogAppControllers'*/
-  'blogAppControllers',
+  /*'blogAppControllers',*/
   'ui.router'
 ]);
 
 blogApp
-.config(['$stateProvider', '$urlRouterProvider',
-  function($stateProvider,$urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+  function($stateProvider,$urlRouterProvider,$locationProvider) {
     $urlRouterProvider.otherwise("/");
      $stateProvider
         .state("index", {
             url: "/",
             views:{
               "list":{
-                templateUrl:"../../partials/list.html",
+                templateUrl:"../app/partials/list.html",
                 controller:"listCtrl"
               },
               "tags":{
-                templateUrl:"../../partials/tags.html",
+                templateUrl:"../app/partials/tags.html",
                 controller:"tagsCtrl"
               },
               "archives":{
-                templateUrl:"../../partials/archives.html",
+                templateUrl:"../app/partials/archives.html",
                 controller:"archivesCtrl"
               }
             }

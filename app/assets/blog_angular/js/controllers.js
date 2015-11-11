@@ -1,17 +1,16 @@
 'use strict';
 
-var blogAppControllers = angular.module('blogAppControllers',[]);
+var blogAppControllers = angular.module('blogApp');
 
-blogAppControllers.controller('listCtrl',['$scope','$routeParams','List',function($scope,$routeParams,List){
-
+blogAppControllers.controller('listCtrl', ['$scope', '$location', function($scope, $location) {
+  console.log($location);
 }]);
 
 
-blogAppControllers.controller('tagsCtrl',['$scope','$routeParams','Tags',function($scope,$routeParams,List){
-
+blogAppControllers.controller('tagsCtrl', ['$scope', '$location', function($scope, $location) {
+  console.log($location);
 }]);
 
-blogAppControllers.controller('archivesCtrl',['$scope','$routeParams','Archives',function($scope,$routeParams,List){
+blogAppControllers.controller('archivesCtrl', ['$scope', '$location', function($scope, $location) {
 
 }]);
-
